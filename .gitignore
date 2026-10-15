@@ -1,0 +1,24 @@
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/*.iml
+*.apk
+*.aab
+*.jks
+*.keystore
+keystore.properties
+
+# Apple
+watch/build/
+watch/*.xcodeproj
+watch/.team
+*.xcuserstate
+xcuserdata/
+DerivedData/
+
+# Secrets
+*.p8
+.DS_Store

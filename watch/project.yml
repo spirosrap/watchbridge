@@ -1,0 +1,42 @@
+name: WatchBridge
+options:
+  bundleIdPrefix: com.spiros
+  deploymentTarget:
+    watchOS: "11.0"
+  xcodeVersion: "27.0"
+packages:
+  QRCodeGenerator:
+    url: https://github.com/fwcd/swift-qrcode-generator
+    from: 2.0.0
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: 0.1.0
+    CURRENT_PROJECT_VERSION: 1
+targets:
+  WatchBridge:
+    type: application
+    platform: watchOS
+    sources:
+      - path: WatchBridge
+    dependencies:
+      - package: QRCodeGenerator
+    entitlements:
+      path: WatchBridge/WatchBridge.entitlements
+      properties:
+        aps-environment: development
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.spiros.WatchBridge
+        PRODUCT_NAME: WatchBridge
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: WatchBridge
+        INFOPLIST_KEY_WKApplication: YES
+        INFOPLIST_KEY_WKWatchOnly: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "4"
+        ENABLE_PREVIEWS: YES
+        SWIFT_STRICT_CONCURRENCY: minimal
